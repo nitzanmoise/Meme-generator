@@ -1,0 +1,271 @@
+
+* {
+    box-sizing: border-box;
+}
+html{
+    font-family:  Lato;
+}
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+header{
+    height: 130px;
+    background: #292929;
+    box-shadow: inset 0 -6px 0  #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color:  #ffffff;
+    font-size: 3em;
+    font-family: eurofurenceRedolar;
+}
+a {
+    text-decoration: none;
+
+}
+input[type="checkbox"]{
+   
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 14px;
+
+
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.new-meme{
+    border: #1e1e1e solid 1px; 
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background: #1e1e1e;
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    
+}
+.download{
+    border: #1e1e1e solid 1px; 
+    border-radius: 5px;
+    background: #1e1e1e;
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 20px;
+    padding: 0 5px;
+}
+.add-download{
+    width: 100%;
+}
+
+select{
+    width: 80px;
+    height: 20px;
+}
+
+.color-picker{
+    width: 30px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.meme-input{
+    width: 87%;
+    height: 20px;
+    max-width: 100%;
+    outline: none;
+    
+}
+.clear-btn {
+    border:1px solid #c2c2c2;
+
+    border-radius: 20px;
+    opacity: 100%;
+    background: transparent;
+    background :lightgray;
+    cursor: pointer;
+    outline: none;
+}
+footer{
+    border-top: 1px solid #1e1e1e;
+}
+.footer-container{
+    margin-top: 50px;
+    
+}
+.profile{
+    widows: 300px;
+    height: 160px;
+    border-radius: 50%;
+}
+canvas {
+    outline: 1px red solid;
+}
+.meme-container{
+    
+    background-color: aquamarine;
+    
+
+}
+
+button{
+    width: 25px;
+    height: 20px;
+
+}
+.canvas-container{
+    margin: 0;
+    padding: 50px;
+}
+.input-container{
+    /* padding-top: 50px; */
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+    
+    
+   
+    
+}
+
+.control-pannel{
+    padding: 10px;
+    max-width: 100%;
+}
+.control-pannel li {
+    margin-left: 2px;
+}
+.flex {
+    display: flex;
+}
+.inline-flex {
+    display: inline-flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+    align-items: flex-start;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-full {
+    flex: 1;
+}
+.direction-column {
+flex-direction: column;
+}
+.img-gallrey{
+    background: aquamarine;
+}
+.gallery-img{
+    width: 300px;
+    height: 160px;
+    cursor: pointer;
+    margin: 5px;
+}
+.display-none{
+    display: none;
+}
+.backto-gallery{
+    cursor: pointer;
+    border: #1e1e1e solid 1px; 
+    border-radius: 5px;
+    background: lightblue;
+    color: #1e1e1e;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 20px;
+    padding: 0 5px;
+}
+.input-header{
+    font-family: lato-bold;
+    color: #1e1e1e;
+    max-width: 100%;
+    padding-top: 50px;
+}
+
+@font-face {
+    font-family: eurofurenceRedolar;
+    src: url('../fonts/eurofurence/eurof35.ttf');
+}
+/*-----lato----*/
+@font-face {
+    font-family: Lato;
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+    font-family: Lato-bold;
+    src: url('../fonts/Lato/Lato-Bold.ttf');
+}
+@font-face {
+    font-family: Armadillo;
+    src: url('../fonts/a-sensible-armadillo/A Sensible Armadillo.ttf');
+}
+
+@media(max-width:740px){
+   .meme-container{
+       flex-wrap: wrap;
+       justify-content: flex-start;
+    max-width: 100%;
+       
+
+    }
+   canvas{
+       max-width: 100%;
+       height: auto;
+   }
+   form{
+       padding-left: 2px;
+   }
+   .input-container{
+   
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        
+        
+        
+
+   }
+   .input-header{
+       padding-top: 0;
+   }
+   .meme-input{
+       max-width: 100%;
+   }
+   .control-pannel{
+    flex-wrap: wrap;
+   }
+   .footer-container{
+       flex-wrap: wrap;
+   }
+}

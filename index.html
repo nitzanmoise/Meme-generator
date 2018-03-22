@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fa/fontawesome-all.css">
+
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="header-container">
+            <h1>Meme This!</h1>
+        </div>
+    </header>
+    <section class="img-gallrey flex flex-wrap space-around"></section>
+    <main class="meme-container container flex align-center justify-center display-none">
+        <div class="meme-container flex align-center justify-center ">
+            <div class="canvas-container ">
+                <canvas id="canvas" width="500" height="360" style="border:1px solid #d3d3d3;"></canvas>
+            </div>
+            <div class="flex direction-column align-center justify-center ">
+                <h2 class="input-header">Writ your punchline!</h2>
+                <form class="input-container" onsubmit="return false">
+
+                </form>
+
+                <div class="add-download">
+                    <div class="new-meme" onclick="addLine()">Add new line</div>
+                    <a class="download" href="#" id="download" onclick="downloadData(this)" download="img.png">Download Meme</a>
+                    <div class="backto-gallery" onclick="backToGallery()">Back to gallery!</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="flex space-around">
+        <div class="footer-container flex space-around ">
+            <img class="profile" src="../img/profile/profile.jpg" alt="">
+            <div class="info">
+                <div class="info-header">
+                    <h2>Nitzan Moise</h2>
+                    <H4>Web developer</H4>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis totam, recusandae exercitationem quae
+                    magni in. Cupiditate, aut delectus! Voluptate, quae officiis expedita natus ea quidem possimus rem blanditiis
+                    nostrum illo!</p>
+            </div>
+        </div>
+
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
