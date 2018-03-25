@@ -29,7 +29,7 @@ var gMeme = {
     selectedImgId: 1,
     txts: [
         {
-            line: 'HEY BABY',
+            line: '',
             size: 40,
             align: 'center',
             color: 'white',
@@ -42,7 +42,7 @@ var gMeme = {
         },
 
         {
-            line: 'HEY BABY',
+            line: '',
             size: 40,
             align: 'center',
             color: 'white',
