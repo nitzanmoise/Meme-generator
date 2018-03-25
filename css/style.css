@@ -41,29 +41,29 @@ input[type="checkbox"]{
     max-width: 1100px;
     margin: 0 auto;
 }
-.new-meme{
+.new-line{
     border: #1e1e1e solid 1px; 
     border-radius: 5px;
     display: inline-block;
     cursor: pointer;
-    background: #1e1e1e;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1e1e1e;;
     margin-bottom: 10px;
-    padding: 0 5px;
+    padding: 5px;
     
 }
 .download{
     border: #1e1e1e solid 1px; 
     border-radius: 5px;
-    background: #1e1e1e;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1e1e1e;
     display: inline-block;
     cursor: pointer;
-    padding: 0 20px;
-    padding: 0 5px;
+   padding: 5px;
 }
 .add-download{
     width: 100%;
+    /* margin-left: -50px; */
 }
 
 select{
@@ -82,21 +82,35 @@ select{
     padding: 0;
 }
 .meme-input{
-    width: 87%;
-    height: 20px;
+    width: 90%;
+    height: 30px;
     max-width: 100%;
     outline: none;
     
 }
+.meme-pannel{
+    background: aliceblue;
+    padding: 40px;
+    border-radius: 120px;
+    margin-top: 20px;
+    margin-right: 50px;
+    padding-right: 0;
+}
+i {
+    color: #ffffff;
+}
 .clear-btn {
     border:1px solid #c2c2c2;
 
-    border-radius: 20px;
+    border-radius: 10px;
     opacity: 100%;
     background: transparent;
-    background :lightgray;
+    background :rgb(56, 49, 49);
     cursor: pointer;
     outline: none;
+}
+.delete{
+    color: rgb(233, 92, 92);
 }
 footer{
     border-top: 1px solid #1e1e1e;
@@ -111,18 +125,18 @@ footer{
     border-radius: 50%;
 }
 canvas {
-    outline: 1px red solid;
+    outline: 1px black solid;
 }
 .meme-container{
     
-    background-color: aquamarine;
+    background-color: lightsteelblue;;
     
 
 }
 
 button{
-    width: 25px;
-    height: 20px;
+    width: 30px;
+    height: 25px;
 
 }
 .canvas-container{
@@ -183,7 +197,7 @@ button{
 flex-direction: column;
 }
 .img-gallrey{
-    background: aquamarine;
+    background: lightsteelblue;;
 }
 .gallery-img{
     width: 300px;
@@ -195,23 +209,30 @@ flex-direction: column;
     display: none;
 }
 .backto-gallery{
-    cursor: pointer;
+ 
     border: #1e1e1e solid 1px; 
     border-radius: 5px;
-    background: lightblue;
+    background: #ffffff;
     color: #1e1e1e;
     display: inline-block;
     cursor: pointer;
-    padding: 0 20px;
-    padding: 0 5px;
+    padding: 5px;
 }
 .input-header{
-    font-family: lato-bold;
+    font-family: Armadillo;
+    font-size: 2em;
     color: #1e1e1e;
     max-width: 100%;
-    padding-top: 50px;
-}
+    /* padding-top: 50px; */
+    margin-left: 50px;
 
+}
+.key-words {
+    font-size: 40px;
+    cursor: pointer;
+    /* margin: 5px; */
+    padding: 10px;
+}
 @font-face {
     font-family: eurofurenceRedolar;
     src: url('../fonts/eurofurence/eurof35.ttf');
@@ -252,13 +273,25 @@ flex-direction: column;
         flex-direction: column;
         max-width: 100%;
         
+    }
+       .add-download{
+        padding-bottom: 15px;
+        margin-top: 20px;
+    
+       } 
         
-        
+.meme-pannel{
+    margin: -25px 25px 40px 25px;
+    padding-left: 20px;   
 
-   }
+}
+.new-line{
+    margin: 0;
+}
    .input-header{
        padding-top: 0;
-   }
+       margin-left: 0;
+   }    
    .meme-input{
        max-width: 100%;
    }

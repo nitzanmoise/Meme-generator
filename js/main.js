@@ -4,25 +4,26 @@ var ctx;
 function init() {
     renderControlPannel()
     drawImage()
+    renderKeyWords()
     renderGallery();
 }
 
 
 
-
+var gKeyWords = [' Laugh', ' Happy',' Dance', ' Kids',' Baby',' President',' Kiss', ' Basketball', ' Trump',' Dogs', ' Yoga', ' Animal',' Gun', ' Woman', ' Sad', ' Angry', ' Sport', ' Football',' Lazy',' Cats'];
 var gImgs = [
-    { id: 1, url: 'img/img1.jpg', keywords: ['happy'] },
-    { id: 2, url: 'img/img2.jpg', keywords: ['happy'] },
-    { id: 3, url: 'img/img3.jpg', keywords: ['happy'] },
-    { id: 4, url: 'img/img4.jpg', keywords: ['happy'] },
-    { id: 5, url: 'img/img5.jpg', keywords: ['happy'] },
-    { id: 6, url: 'img/img6.jpg', keywords: ['happy'] },
-    { id: 7, url: 'img/img7.jpg', keywords: ['happy'] },
-    { id: 8, url: 'img/img8.jpg', keywords: ['happy'] },
-    { id: 9, url: 'img/img9.jpg', keywords: ['happy'] },
-    { id: 10, url: 'img/img10.jpg', keywords: ['happy'] },
-    { id: 11, url: 'img/img11.jpg', keywords: ['happy'] },
-    { id: 12, url: 'img/img12.jpg', keywords: ['happy'] },
+    { id: 1, url: 'img/img1.jpg', keywords: ['Laugh', 'Happy'] },
+    { id: 2, url: 'img/img2.jpg', keywords: ['Dance', 'Kids', 'Happy'] },
+    { id: 3, url: 'img/img3.jpg', keywords: ['Baby'] },
+    { id: 4, url: 'img/img4.jpg', keywords: ['President', 'Trump'] },
+    { id: 5, url: 'img/img5.jpg', keywords: ['Baby'] },
+    { id: 6, url: 'img/img6.jpg', keywords: ['Dogs', 'Yoga', 'Animal'] },
+    { id: 7, url: 'img/img7.jpg', keywords: ['Gun', 'Woman', 'Sad', 'Angry'] },
+    { id: 8, url: 'img/img8.jpg', keywords: ['Happy', 'Sport', 'Football', 'Laugh'] },
+    { id: 9, url: 'img/img9.jpg', keywords: ['Animal', 'Lazy'] },
+    { id: 10, url: 'img/img10.jpg', keywords: ['Cats', 'Animal'] },
+    { id: 11, url: 'img/img11.jpg', keywords: ['Happy', 'President', 'Laugh'] },
+    { id: 12, url: 'img/img12.jpg', keywords: ['Kiss', 'Sport', 'Basketball'] },
 
 ];
 var gMeme = {
@@ -75,6 +76,7 @@ function drawImage() {
             context.fillStyle = txt.color;
             context.textAlign = txt.align;
             context.fillText(txt.line, txt.posX, txt.posY);
+
         })
 
     };
@@ -89,8 +91,9 @@ function setCanvasImage(elImg, idx) {
 
     drawImage();
     clearText()
-    if (gMeme.txts.length > 2){ gMeme.txts.pop();
-    }else if (gMeme.txts.length < 2) {
+    if (gMeme.txts.length > 2) {
+        gMeme.txts.pop();
+    } else if (gMeme.txts.length < 2) {
         var line = getLine();
         gMeme.txts.push(line);
     }
@@ -111,28 +114,57 @@ function backToGallery() {
 
 function clearText() {
     gMeme.txts.map(function (txt, idx) {
-        txt.line = 'HEY BABY';
+        txt.line = '';
 
     })
     renderControlPannel();
 
 }
-function renderGallery() {
+function renderGallery(elVal) {
     var strHtmls = '';
     gImgs.forEach(function (img, idx) {
-        var strHtml = `<div class="gallery-img${idx}" ><img class="gallery-img" onclick="setCanvasImage(this, ${idx})" src=${img.url} alt=""></div>`;
+        
+        var strHtml = `<div class="${img.keywords.join(' ')} gallery-img${idx}  " ><img class="gallery-img" onclick="setCanvasImage(this, ${idx})" src=${img.url} alt=""></div>`;
         strHtmls += strHtml;
     })
+    
     var elGallery = document.querySelector(".img-gallrey");
     elGallery.innerHTML = strHtmls;
 
 }
+
+function renderKeyWords(){
+    var strHtmls = ' ';
+    gKeyWords.forEach(function (keyword, idx) {
+        var strHtml = `<div class="key-words key-word${idx}" onclick="findImgByKeyWord(this, ${idx})"> ${ keyword}</div>`;
+        strHtmls += strHtml;
+    })
+    var elGallery = document.querySelector(".key-words");
+    elGallery.innerHTML = strHtmls;
+
+
+}
+function findImgByKeyWord(elVal, idx){
+    
+
+// gImgs.forEach(function(img, i){
+//       var elCurrImg = document.querySelector(".gallery-img"+i);
+//       console.log(".gallery-img"+i);
+      
+      
+//       if (elCurrImg.classList.contains(`${elVal}`)) {
+//        elCurrImg.classList.add("display-none");
+//       }
+//     })
+
+}
+
 function renderControlPannel() {
     var strHtmls = '';
     gMeme.txts.forEach(function (txt, idx) {
         var strHtml = `<div class="input-line">
         <input class="meme-input" type="text" id="input${idx}" name="topMeme" placeholder="Add meme!" oninput="setLine(this.value, ${idx})" />
-      <button class="clear-btn" type="button" onclick="clearLine(${idx})"><i class="fas fa-trash-alt"></i></button>
+      <button class="clear-btn" type="button" onclick="clearLine(${idx})"><i class="delete fas fa-trash-alt"></i></button>
         
         </div>
         <ul class="control-pannel flex align-center justify-center clean-list">

@@ -17,20 +17,21 @@
             <h1>Meme This!</h1>
         </div>
     </header>
-    <section class="img-gallrey flex flex-wrap space-around"></section>
+    <section class="key-words flex flex-wrap container"></section>
+    <section class="img-gallrey flex flex-wrap space-around container"></section>
     <main class="meme-container container flex align-center justify-center display-none">
         <div class="meme-container flex align-center justify-center ">
             <div class="canvas-container ">
                 <canvas id="canvas" width="500" height="360" style="border:1px solid #d3d3d3;"></canvas>
             </div>
-            <div class="flex direction-column align-center justify-center ">
-                <h2 class="input-header">Writ your punchline!</h2>
+            <div class="meme-pannel flex direction-column align-center  ">
+                <h2 class="input-header">Write your punchline!</h2>
                 <form class="input-container" onsubmit="return false">
 
                 </form>
 
                 <div class="add-download">
-                    <div class="new-meme" onclick="addLine()">Add new line</div>
+                    <div class="new-line" onclick="addLine()">Add new line</div>
                     <a class="download" href="#" id="download" onclick="downloadData(this)" download="img.png">Download Meme</a>
                     <div class="backto-gallery" onclick="backToGallery()">Back to gallery!</div>
                 </div>
